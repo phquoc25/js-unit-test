@@ -5,7 +5,8 @@
   "author": "phquoc25@gmail.com",
   "license": "MIT",
   "scripts": {
-    "test": "karma start"
+    "test": "karma start --browsers Chrome",
+    "test:ci": "karma start --browsers ChromeHeadless --single-run"
   },
   "devDependencies": {
     "jasmine-core": "^4.5.0",
