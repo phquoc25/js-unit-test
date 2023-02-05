@@ -13,10 +13,19 @@ module.exports = function(config) {
     frameworks: ['jasmine'],
 
 
+    client: {
+      jasmine: {
+          // you can add configuration options for Jasmine here
+          // the possible options are listed at https://jasmine.github.io/api/edge/Configuration.html
+          // for example, you can disable the random execution with `random: false`
+          // or set a specific seed with `seed: 4321`
+      },
+      clearContext: false, // leave Jasmine Spec Runner output visible in browser
+    },
+  
     // list of files / patterns to load in the browser
     files: [
-      'src/**/*.js',
-      'test/**/*.js'
+      'src/**/*.js'
     ],
 
 
@@ -31,7 +40,7 @@ module.exports = function(config) {
       // source files, that you wanna generate coverage for
       // do not include tests or libraries
       // (these files will be instrumented by Istanbul)
-      'src/**/*.js': ['coverage']
+      'src/**/!(*.spec)*.js': ['coverage']
     },
 
 
